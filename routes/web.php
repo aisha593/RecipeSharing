@@ -39,5 +39,8 @@ Route::post('/add/category', [CategoryController::class, 'store'])->name('catego
 
 Route::get('/add/category', [CategoryController::class, 'create'])->name('category.create');
 
+Route::get('/categories', [CategoryController::class, 'loadCategoriesPage'])->name('category.categories');
+//user profile
+Route::post('/user/profile',[ProfileController::class, 'save'])->name('user.profile');
 
 require __DIR__.'/auth.php';

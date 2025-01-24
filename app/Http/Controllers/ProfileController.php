@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,5 +57,17 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+    public function save(Request $request){
+        $request->validate([
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        
+        $user = auth()->user(); // Get the currently authenticated user
+        $user->profile_image = $request->file('profile_image')->store('recipes', 'public');
+        $user->save();
+
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+   
     }
 }

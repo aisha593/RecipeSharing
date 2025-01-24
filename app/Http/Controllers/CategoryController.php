@@ -30,6 +30,11 @@ class CategoryController extends Controller
 
         Toaster::success('Category created!');
 
-     return view('category.add-category');
+    
+     return redirect()->route('category.create');
+    }
+    public function loadCategoriesPage(){
+        $categories = Category::all();
+        return view('category.manage-category',compact('categories'));
     }
 }
