@@ -37,6 +37,10 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class);
     }
 
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *

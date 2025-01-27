@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -30,7 +32,7 @@ Route::get('/edit/recipe/{id}',[RecipeController::class, 'loadEditPage']);
 
 Route::post('/edit/recipe/{id}',[RecipeController::class, 'Update'])->name('recipe.update');
 
-Route::get('/view/recipe/{id}',[RecipeController::class, 'viewRecipe']);
+Route::get('/view/recipe/{id}',[RecipeController::class, 'viewRecipe'])->name('recipe.viewRecipe');
 
 Route::get('/delete-recipe/{id}', [RecipeController::class, 'deleteRecipe'])->name('delete.recipe');
 
@@ -43,4 +45,6 @@ Route::get('/categories', [CategoryController::class, 'loadCategoriesPage'])->na
 //user profile
 Route::post('/user/profile',[ProfileController::class, 'save'])->name('user.profile');
 
+//comment
+Route::post('/comments/save/{recipeId}',[CommentController::class, 'saveComment'])->name('comment.save');
 require __DIR__.'/auth.php';

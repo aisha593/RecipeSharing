@@ -51,8 +51,8 @@
                           <img src="{{ asset('storage/' . $recipe->image) }}" class="h-24 w-24 object-cover sm:h-24 sm:w-24 md:h-24 md:w-40 lg:h-32 lg:w-32" alt="Recipe Image"> 
                         </td>
                        
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->ingredients }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->description }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ str($recipe->ingredients)->words(3) }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ str($recipe->description)->words(3) }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->title }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->user->name }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-800 dark:text-red-800">
