@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -47,4 +49,6 @@ Route::post('/user/profile',[ProfileController::class, 'save'])->name('user.prof
 
 //comment
 Route::post('/comments/save/{recipeId}',[CommentController::class, 'saveComment'])->name('comment.save');
+
+Route::post('/like', [LikeController::class, 'toggleLike'])->name('like.toggle');
 require __DIR__.'/auth.php';
