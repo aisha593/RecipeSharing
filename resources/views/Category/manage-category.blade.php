@@ -9,15 +9,26 @@
                <div class="pl-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
                
                 <!-- Input -->
-                 <div class="sm:col-span-1">
-                   <label for="hs-as-table-product-review-search" class="sr-only">Search</label>
-                   <div class="relative">
-                     <input wire:model.live.debounce.300ms="search" type="text" id="hs-as-table-product-review-search" name="hs-as-table-product-review-search" class="py-2 px-3 ps-11 block w-full bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search">
-                     <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                       <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                     </div>
-                   </div>
-                 </div>
+                <div class="sm:col-span-1">
+                  <label for="hs-as-table-product-review-search" class="sr-only">Search</label>
+                  <div class="relative">
+                      <form method="GET" action="{{ route('category.index') }}">
+                          <input type="text" 
+                                 id="hs-as-table-product-review-search" 
+                                 name="search" 
+                                 class="py-2 px-3 ps-11 block w-full bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
+                                 placeholder="Search"
+                                 value="{{ request('search') }}">
+                          <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
+                              <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <circle cx="11" cy="11" r="8"/>
+                                  <path d="m21 21-4.3-4.3"/>
+                              </svg>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              
                  <!-- End Input -->
                    <div class="pr-6">
                    <a href="/add/category" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-600 disabled:opacity-25 transition">Add Category</a>
@@ -35,7 +46,7 @@
                  <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Description</th>
                  <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Delete</th>
                  <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Edit</th>
-                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">View</th>
+                 
                  </tr>
              </thead>
              <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
@@ -63,15 +74,7 @@
                               
                             </a>
                           </td>
-                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-800 dark:text-green-800">
-                            <a href="/view/recipe/{{ $category->id }}">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                              </svg>
-                              
-                            </a>
-                          </td>
+                         
                       
                       </tr>
                       @endforeach
@@ -84,21 +87,24 @@
    
              </tbody>
            </table>
-             <div class="py-4 px-3">
-                       <div class="flex ">
-                           <div class="flex space-x-4 items-center mb-3">
-                               <label class="w-32 text-sm font-medium text-gray-900">Per Page</label>
-                               <select wire:model.live='perPage'
-                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-                                   <option value="5">5</option>
-                                   <option value="7">7</option>
-                                   <option value="10">10</option>
-                                   <option value="20">20</option>
-                                   <option value="50">50</option>
-                                   <option value="100">100</option>
-                               </select>
-                           </div>
-                       </div>
+           <div class="py-4 px-3">
+                     
+            <div class="flex">
+             <div class="flex space-x-4 items-center mb-3">
+                 <label class="w-32 text-sm font-medium text-gray-900">Per Page</label>
+                 <form method="GET" action="{{ route('category.index') }}">
+                     <select name="perPage" onchange="this.form.submit()"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
+                         <option value="5" {{ $perPage == 5 ? 'selected' : '' }}>5</option>
+                         <option value="7" {{ $perPage == 7 ? 'selected' : '' }}>7</option>
+                         <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
+                         <option value="20" {{ $perPage == 20 ? 'selected' : '' }}>20</option>
+                         <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
+                         <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
+                     </select>
+                 </form>
+             </div>
+         </div>
          </div>
        </div>
      </div>

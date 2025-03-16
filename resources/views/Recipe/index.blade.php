@@ -9,15 +9,69 @@
              <div class="pl-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
              
               <!-- Input -->
-               <div class="sm:col-span-1">
-                 <label for="hs-as-table-product-review-search" class="sr-only">Search</label>
-                 <div class="relative">
-                   <input wire:model.live.debounce.300ms="search" type="text" id="hs-as-table-product-review-search" name="hs-as-table-product-review-search" class="py-2 px-3 ps-11 block w-full bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search">
-                   <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                     <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                   </div>
-                 </div>
-               </div>
+               
+               {{-- <form action="{{ route('recipe.index') }}" method="GET">
+                <div class="sm:col-span-1">
+                  <label for="search" class="sr-only">Search</label>
+                  <div class="relative">
+                    <input 
+                      type="text" 
+                      id="search" 
+                      name="search" 
+                      value="{{ request('search') }}" 
+                      class="py-2 px-3 ps-11 block w-full bg-gray-50 border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
+                      placeholder="Search">
+                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
+                      <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.3-4.3"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </form> --}}
+              <form action="{{ route('recipe.index') }}" method="GET" class="mb-4">
+                <div class="flex flex-wrap gap-4 items-end">
+                
+                  <div class="flex-1 relative">
+                    <label for="search" class="sr-only">Search Recipes</label>
+                    <input 
+                      type="text" 
+                      name="search" 
+                      id="search" 
+                      value="{{ request('search') }}" 
+                      placeholder="Search by title or ingredients" 
+                      class="w-full py-2 pl-10 pr-3 border rounded focus:outline-none focus:border-blue-500"
+                    >
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                      </svg>
+                    </div>
+                  </div>
+              
+                  <!-- Category Dropdown (Optional) -->
+                  <div class="w-48">
+                    <label for="category_id" class="sr-only">Filter by Category</label>
+                    <select name="category_id" id="select_category" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Category">
+                      <option value=""  {{ old('category_id') ? '' : 'selected' }}>Select category</option>
+                      @foreach ($categories as $category)
+                      <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+
+                          {{ $category->name }}
+                        </option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div>
+                    <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+              
+              
                <!-- End Input -->
                  <div class="pr-6">
                  <a href="/add/recipe" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-600 disabled:opacity-25 transition">Add Recipe</a>
@@ -32,13 +86,13 @@
              <tr>
                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">#</th>
                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Image</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
                 <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Ingredients</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Description</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Created_by</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Delete</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Edit</th>
-               <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">View</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Description</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Created_at</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Delete</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Edit</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">View</th>
                </tr>
            </thead>
            <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
@@ -50,11 +104,11 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
                           <img src="{{ asset('storage/' . $recipe->image) }}" class="h-24 w-24 object-cover sm:h-24 sm:w-24 md:h-24 md:w-40 lg:h-32 lg:w-32" alt="Recipe Image"> 
                         </td>
-                       
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->title }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ str($recipe->ingredients)->words(3) }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ str($recipe->description)->words(3) }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->title }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->user->name }}</td>
+ 
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $recipe->created_at }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-800 dark:text-red-800">
                          <a href="/delete-recipe/{{ $recipe->id }}" onclick="return confirm('Are you sure you want to delete this recipe:?')">
   
@@ -94,20 +148,23 @@
            </tbody>
          </table>
            <div class="py-4 px-3">
-                     <div class="flex ">
-                         <div class="flex space-x-4 items-center mb-3">
-                             <label class="w-32 text-sm font-medium text-gray-900">Per Page</label>
-                             <select wire:model.live='perPage'
-                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-                                 <option value="5">5</option>
-                                 <option value="7">7</option>
-                                 <option value="10">10</option>
-                                 <option value="20">20</option>
-                                 <option value="50">50</option>
-                                 <option value="100">100</option>
-                             </select>
-                         </div>
-                     </div>
+                     
+                     <div class="flex">
+                      <div class="flex space-x-4 items-center mb-3">
+                          <label class="w-32 text-sm font-medium text-gray-900">Per Page</label>
+                          <form method="GET" action="{{ route('recipe.index') }}">
+                              <select name="perPage" onchange="this.form.submit()"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                  <option value="5" {{ $perPage == 5 ? 'selected' : '' }}>5</option>
+                                  <option value="7" {{ $perPage == 7 ? 'selected' : '' }}>7</option>
+                                  <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
+                                  <option value="20" {{ $perPage == 20 ? 'selected' : '' }}>20</option>
+                                  <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
+                                  <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
+                              </select>
+                          </form>
+                      </div>
+                  </div>
        </div>
      </div>
    </div>
