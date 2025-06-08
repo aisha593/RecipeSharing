@@ -18,7 +18,8 @@ class CategoryController extends Controller
     // If a search keyword is provided, filter categories by name.
     if ($request->filled('search')) {
         $search = $request->input('search');
-        $query->where('name', 'LIKE', '%' . $search . '%');
+        $query->where('name', 'LIKE', '%' . $search . '%')
+        ->orWhere('description', 'LIKE', '%' . $search . '%');
     }
 
     // Paginate the results.

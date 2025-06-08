@@ -11,34 +11,7 @@ use Masmerise\Toaster\Toaster;
 
 class RecipeController extends Controller
 {
-    //
-    // public function index(Request $request){
-    //     $perPage = $request->input('perPage', 5);
-    //     $recipes = Recipe::where('user_id', auth()->user()->id)->paginate($perPage);
-    //     return view('recipe.index',['recipes' => $recipes],['perPage'=> $perPage]);
-    // }
-//     public function index(Request $request)
-// {
-//     $perPage = $request->input('perPage', 5);
-
-//     // Start by retrieving recipes for the authenticated user.
-//     $query = Recipe::where('user_id', auth()->user()->id);
-
-//     // If a search keyword is provided, filter recipes by title only.
-//     if ($request->filled('search')) {
-//         $search = $request->input('search');
-//         $query->where('title', 'LIKE', '%' . $search . '%');
-//     }
-
-//     // Paginate the results.
-//     $recipes = $query->paginate($perPage);
-
-//     // Return the view with the paginated recipes and perPage value.
-//     return view('recipe.index', [
-//         'recipes' => $recipes,
-//         'perPage' => $perPage,
-//     ]);
-// }
+    
 public function index(Request $request)
 {
     $perPage = $request->input('perPage', 5);
