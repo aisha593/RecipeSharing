@@ -10,6 +10,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'description',
+        'image',
     ];
     public function recipe(){
         return $this->hasMany(Recipe::class);

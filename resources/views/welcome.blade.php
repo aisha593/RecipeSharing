@@ -22,508 +22,23 @@
     
     <body class="font-sans antialiased bg-gray-200 dark:bg-black dark:text-white/50">
         
-        {{-- <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
-
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%_+_8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
-
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
-                </div>
-            </div>
-        </div> --}}
-
         <!-- ========== HEADER ========== -->
-<header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-7">
-    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+         <header class="bg-green-100 flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-5">
+    <nav class=" relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
       <div class="lg:col-span-3 flex items-center">
         <!-- Logo -->
-        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="../templates/creative-agency/index.html" aria-label="Preline">
-          <svg class="w-28 h-auto" width="116" height="32" viewBox="0 0 116 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M33.5696 30.8182V11.3182H37.4474V13.7003H37.6229C37.7952 13.3187 38.0445 12.9309 38.3707 12.5369C38.7031 12.1368 39.134 11.8045 39.6634 11.5398C40.1989 11.2689 40.8636 11.1335 41.6577 11.1335C42.6918 11.1335 43.6458 11.4044 44.5199 11.946C45.3939 12.4815 46.0926 13.291 46.6158 14.3743C47.139 15.4515 47.4006 16.8026 47.4006 18.4276C47.4006 20.0095 47.1451 21.3452 46.6342 22.4347C46.1295 23.518 45.4401 24.3397 44.5661 24.8999C43.6982 25.4538 42.7256 25.7308 41.6484 25.7308C40.8852 25.7308 40.2358 25.6046 39.7003 25.3523C39.1709 25.0999 38.737 24.7829 38.3984 24.4013C38.0599 24.0135 37.8014 23.6226 37.6229 23.2287H37.5028V30.8182H33.5696ZM37.4197 18.4091C37.4197 19.2524 37.5367 19.9879 37.7706 20.6158C38.0045 21.2436 38.343 21.733 38.7862 22.0838C39.2294 22.4285 39.768 22.6009 40.402 22.6009C41.0421 22.6009 41.5838 22.4254 42.027 22.0746C42.4702 21.7176 42.8056 21.2251 43.0334 20.5973C43.2673 19.9633 43.3842 19.2339 43.3842 18.4091C43.3842 17.5904 43.2704 16.8703 43.0426 16.2486C42.8149 15.6269 42.4794 15.1406 42.0362 14.7898C41.593 14.4389 41.0483 14.2635 40.402 14.2635C39.7618 14.2635 39.2202 14.4328 38.777 14.7713C38.34 15.1098 38.0045 15.59 37.7706 16.2116C37.5367 16.8333 37.4197 17.5658 37.4197 18.4091ZM49.2427 25.5V11.3182H53.0559V13.7926H53.2037C53.4622 12.9124 53.8961 12.2476 54.5055 11.7983C55.1149 11.3428 55.8166 11.1151 56.6106 11.1151C56.8076 11.1151 57.02 11.1274 57.2477 11.152C57.4754 11.1766 57.6755 11.2105 57.8478 11.2536V14.7436C57.6632 14.6882 57.4077 14.639 57.0815 14.5959C56.7553 14.5528 56.4567 14.5312 56.1859 14.5312C55.6073 14.5312 55.0903 14.6574 54.6348 14.9098C54.1854 15.156 53.8284 15.5007 53.5638 15.9439C53.3052 16.3871 53.176 16.898 53.176 17.4766V25.5H49.2427ZM64.9043 25.777C63.4455 25.777 62.1898 25.4815 61.1373 24.8906C60.0909 24.2936 59.2845 23.4503 58.7182 22.3608C58.1519 21.2652 57.8688 19.9695 57.8688 18.4737C57.8688 17.0149 58.1519 15.7346 58.7182 14.6328C59.2845 13.531 60.0816 12.6723 61.1096 12.0568C62.1437 11.4413 63.3563 11.1335 64.7474 11.1335C65.683 11.1335 66.5539 11.2843 67.3603 11.5859C68.1728 11.8814 68.8806 12.3277 69.4839 12.9247C70.0932 13.5218 70.5672 14.2727 70.9057 15.1776C71.2443 16.0762 71.4135 17.1288 71.4135 18.3352V19.4155H59.4384V16.978H67.7111C67.7111 16.4117 67.588 15.91 67.3418 15.473C67.0956 15.036 66.754 14.6944 66.317 14.4482C65.8861 14.1958 65.3844 14.0696 64.812 14.0696C64.2149 14.0696 63.6856 14.2081 63.2239 14.4851C62.7684 14.7559 62.4114 15.1222 62.1529 15.5838C61.8944 16.0393 61.762 16.5471 61.7559 17.1072V19.4247C61.7559 20.1264 61.8851 20.7327 62.1437 21.2436C62.4083 21.7545 62.7807 22.1484 63.2608 22.4254C63.741 22.7024 64.3103 22.8409 64.9689 22.8409C65.406 22.8409 65.8061 22.7794 66.1692 22.6562C66.5324 22.5331 66.8432 22.3485 67.1018 22.1023C67.3603 21.8561 67.5572 21.5545 67.6927 21.1974L71.3304 21.4375C71.1458 22.3116 70.7672 23.0748 70.1948 23.7273C69.6285 24.3736 68.896 24.8783 67.9974 25.2415C67.1048 25.5985 66.0738 25.777 64.9043 25.777ZM77.1335 6.59091V25.5H73.2003V6.59091H77.1335ZM79.5043 25.5V11.3182H83.4375V25.5H79.5043ZM81.4801 9.49006C80.8954 9.49006 80.3937 9.29616 79.9752 8.90838C79.5628 8.51444 79.3566 8.04356 79.3566 7.49574C79.3566 6.95407 79.5628 6.48935 79.9752 6.10156C80.3937 5.70762 80.8954 5.51065 81.4801 5.51065C82.0649 5.51065 82.5635 5.70762 82.9759 6.10156C83.3944 6.48935 83.6037 6.95407 83.6037 7.49574C83.6037 8.04356 83.3944 8.51444 82.9759 8.90838C82.5635 9.29616 82.0649 9.49006 81.4801 9.49006ZM89.7415 17.3011V25.5H85.8083V11.3182H89.5569V13.8203H89.723C90.037 12.9955 90.5632 12.343 91.3019 11.8629C92.0405 11.3767 92.9361 11.1335 93.9887 11.1335C94.9735 11.1335 95.8322 11.349 96.5647 11.7798C97.2971 12.2107 97.8665 12.8262 98.2728 13.6264C98.679 14.4205 98.8821 15.3684 98.8821 16.4702V25.5H94.9489V17.1719C94.9551 16.304 94.7335 15.6269 94.2841 15.1406C93.8348 14.6482 93.2162 14.402 92.4283 14.402C91.8989 14.402 91.4311 14.5159 91.0249 14.7436C90.6248 14.9714 90.3109 15.3037 90.0831 15.7408C89.8615 16.1716 89.7477 16.6918 89.7415 17.3011ZM107.665 25.777C106.206 25.777 104.951 25.4815 103.898 24.8906C102.852 24.2936 102.045 23.4503 101.479 22.3608C100.913 21.2652 100.63 19.9695 100.63 18.4737C100.63 17.0149 100.913 15.7346 101.479 14.6328C102.045 13.531 102.842 12.6723 103.87 12.0568C104.905 11.4413 106.117 11.1335 107.508 11.1335C108.444 11.1335 109.315 11.2843 110.121 11.5859C110.934 11.8814 111.641 12.3277 112.245 12.9247C112.854 13.5218 113.328 14.2727 113.667 15.1776C114.005 16.0762 114.174 17.1288 114.174 18.3352V19.4155H102.199V16.978H110.472C110.472 16.4117 110.349 15.91 110.103 15.473C109.856 15.036 109.515 14.6944 109.078 14.4482C108.647 14.1958 108.145 14.0696 107.573 14.0696C106.976 14.0696 106.446 14.2081 105.985 14.4851C105.529 14.7559 105.172 15.1222 104.914 15.5838C104.655 16.0393 104.523 16.5471 104.517 17.1072V19.4247C104.517 20.1264 104.646 20.7327 104.905 21.2436C105.169 21.7545 105.542 22.1484 106.022 22.4254C106.502 22.7024 107.071 22.8409 107.73 22.8409C108.167 22.8409 108.567 22.7794 108.93 22.6562C109.293 22.5331 109.604 22.3485 109.863 22.1023C110.121 21.8561 110.318 21.5545 110.454 21.1974L114.091 21.4375C113.907 22.3116 113.528 23.0748 112.956 23.7273C112.389 24.3736 111.657 24.8783 110.758 25.2415C109.866 25.5985 108.835 25.777 107.665 25.777Z" class="fill-black dark:fill-white" fill="currentColor"/>
-            <path d="M1 29.5V16.5C1 9.87258 6.37258 4.5 13 4.5C19.6274 4.5 25 9.87258 25 16.5C25 23.1274 19.6274 28.5 13 28.5H12" class="stroke-black dark:stroke-white" stroke="currentColor" stroke-width="2"/>
-            <path d="M5 29.5V16.66C5 12.1534 8.58172 8.5 13 8.5C17.4183 8.5 21 12.1534 21 16.66C21 21.1666 17.4183 24.82 13 24.82H12" class="stroke-black dark:stroke-white" stroke="currentColor" stroke-width="2"/>
-            <circle cx="13" cy="16.5214" r="5" class="fill-black dark:fill-white" fill="currentColor"/>
-          </svg>
-        </a>
+         <a class="flex item-center gap-2 rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="#" aria-label="Preline">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-10 h-10"><g data-name="30-cooking book"><path d="M28 56H1v-2s8-3 15-3c7.07 0 12 5 12 5zM63 54v2H36s4.93-5 12-5c7 0 15 3 15 3z" style="fill:#918778"/><path style="fill:#733125" d="M7 60h50v3H7z"/><path d="M57 56v4H7v-4h21c0-1.11 1.79-2 4-2s4 .89 4 2zM36 10.5v.18a19.606 19.606 0 0 0-3 2.29V10.5a1.5 1.5 0 0 1 3 0z" style="fill:#da684e"/><path d="M57 1v10.87C54.21 10.15 49.79 8 45 8a16.946 16.946 0 0 0-9 2.68v-.18a1.5 1.5 0 0 0-3 0v2.47A12.821 12.821 0 0 0 32 14s-5-6-13-6c-4.79 0-9.21 2.15-12 3.87V1z" style="fill:#da684e"/><path d="M32 51v3c-2.21 0-4 .89-4 2 0 0-4.93-5-12-5-7 0-15 3-15 3V17l3-2v34a27.145 27.145 0 0 1 13-3c8 0 15 5 15 5z" style="fill:#ded0b3"/><path d="M63 17v37s-8-3-15-3c-7.07 0-12 5-12 5 0-1.11-1.79-2-4-2v-3s7-5 15-5a27.145 27.145 0 0 1 13 3V15z" style="fill:#eddebf"/><path d="M18 31c-2.76 0-5 1.24-5 4a5 5 0 0 0 10 0c0-2.76-2.24-4-5-4zm-1.31-7h5.54A2.783 2.783 0 0 0 25 21.2a2.612 2.612 0 0 0-2.31-2.4s-2.77.4-2.77-1.2-3.27-1.6-3.27-1.6C14.36 16 13 17.43 13 19.2c0 2.65 1.65 4.8 3.69 4.8zM7 11.87C9.79 10.15 14.21 8 19 8c8 0 13 6 13 6v37s-7-5-15-5a27.145 27.145 0 0 0-13 3V14a26.423 26.423 0 0 1 3-2.13z" style="fill:#ffe8b8"/><path d="M47 39c0-8-8-8-8-8 0 8 8 8 8 8zm1-8c0 8 8 8 8 8 0-8-8-8-8-8zm9-19.13A26.423 26.423 0 0 1 60 14v35a27.145 27.145 0 0 0-13-3c-8 0-15 5-15 5V14a12.821 12.821 0 0 1 1-1.03 19.606 19.606 0 0 1 3-2.29A16.946 16.946 0 0 1 45 8c4.79 0 9.21 2.15 12 3.87z" style="fill:#ffebc2"/><path d="M16 51c-7 0-15 3-15 3v2s8-3 15-3a17.453 17.453 0 0 1 9.452 3H28s-4.93-5-12-5zM48 51c-7.07 0-12 5-12 5h2.548A17.453 17.453 0 0 1 48 53c7 0 15 3 15 3v-2s-8-3-15-3z" style="fill:#696157"/><path d="M36 56c0-1.11-1.79-2-4-2s-4 .89-4 2H7v2h21c0-1.11 1.79-2 4-2s4 .89 4 2h21v-2zM32 11s-5-6-13-6C14.21 5 9.79 7.15 7 8.87v3C9.79 10.15 14.21 8 19 8c8 0 13 6 13 6a12.821 12.821 0 0 1 1-1.03V10.5a1.479 1.479 0 0 1 .171-.682c-.055.049-.12.105-.171.152A12.821 12.821 0 0 0 32 11zM45 5a16.946 16.946 0 0 0-9 2.68 18.942 18.942 0 0 0-1.966 1.4A1.482 1.482 0 0 1 36 10.5v.18A16.946 16.946 0 0 1 45 8c4.79 0 9.21 2.15 12 3.87v-3C54.21 7.15 49.79 5 45 5z" style="fill:#a64f3c"/><path d="M32 51s-7-5-15-5a27.145 27.145 0 0 0-13 3V15l-2 1.333V52s9.932-4.563 15-4a27.436 27.436 0 0 1 13.957 6.077A7.774 7.774 0 0 1 32 54z" style="fill:#c1c4aa"/><path d="M62 52V16.333L60 15v34a27.145 27.145 0 0 0-13-3c-8 0-15 5-15 5v3a7.774 7.774 0 0 1 1.043.077A27.436 27.436 0 0 1 47 48c5.068-.563 15 4 15 4z" style="fill:#d0d4b8"/><path d="M24.719 42.511a20.271 20.271 0 0 1-6.247-2.559c-.157.015-.31.048-.472.048a5 5 0 0 1-5-5c0-.024.007-.043.007-.067A19.849 19.849 0 0 1 9 22.978V10.741c-.728.38-1.407.764-2 1.129A26.423 26.423 0 0 0 4 14v35a27.145 27.145 0 0 1 13-3c8 0 15 5 15 5v-6a36.532 36.532 0 0 0-7.281-2.489z" style="fill:#edd39c"/><path d="M54.719 42.511A20.241 20.241 0 0 1 47 38.946V39s-8 0-8-8a9.409 9.409 0 0 1 1.789.231A19.863 19.863 0 0 1 39 22.978V9.164a18.45 18.45 0 0 0-3 1.516 19.606 19.606 0 0 0-3 2.29A12.821 12.821 0 0 0 32 14v37s7-5 15-5a27.145 27.145 0 0 1 13 3v-4.853a35.982 35.982 0 0 0-5.281-1.636z" style="fill:#f0daad"/><path d="M19.92 17.6c0 1.6 2.77 1.2 2.77 1.2A2.612 2.612 0 0 1 25 21.2a2.783 2.783 0 0 1-2.77 2.8h-5.54C14.65 24 13 21.85 13 19.2c0-1.77 1.36-3.2 3.65-3.2 0 0 3.27 0 3.27 1.6z" style="fill:#ea735c"/><path d="M18 31c2.76 0 5 1.24 5 4a5 5 0 0 1-10 0c0-2.76 2.24-4 5-4z" style="fill:#e84655"/><path d="m39 31 8 8s-8 0-8-8zM48 31l8 8s-8 0-8-8z" style="fill:#658f41"/><path d="m47 39-8-8s8 0 8 8zM56 39l-8-8s8 0 8 8z" style="fill:#96b343"/><circle cx="17" cy="19" r="1" style="fill:#ffd0c9"/><path d="M19 38a5 5 0 0 1-5-5 4.377 4.377 0 0 1 .071-.676A3.579 3.579 0 0 0 13 35a4.993 4.993 0 0 0 9.855 1.147A4.967 4.967 0 0 1 19 38z" style="fill:#c43b48"/><ellipse cx="20.577" cy="33.708" rx=".825" ry="1.148" transform="rotate(-45.02 20.577 33.707)" style="fill:#f6fafd"/><path d="M18.451 11.134a1.341 1.341 0 0 0-.45.849 1.27 1.27 0 0 0 .27.771A5.051 5.051 0 0 0 20.2 14.16a14.037 14.037 0 0 1 4.827 3.846 27.337 27.337 0 0 0 2.441 3.376 1.511 1.511 0 0 0 1.591.534 1.218 1.218 0 0 0 .454-.4A3.969 3.969 0 0 0 30 19.157q-.009-1.265-.063-2.528a6.739 6.739 0 0 0-.209-1.618 5.119 5.119 0 0 0-1.843-2.447c-2.273-1.82-6.962-3.905-9.434-1.43zM47.669 10.08a3.124 3.124 0 0 0-2.644 2.3 1.611 1.611 0 0 0 .23 1.182 2.176 2.176 0 0 0 .686.579 19.207 19.207 0 0 0 5.312 1.686 33.243 33.243 0 0 1 3.689 1.192c1.033.394 2.222 1.235 3.337.911a1.12 1.12 0 0 0 .455-.226c.5-.461.177-1.728-.046-2.254-1.017-2.4-3.965-3.862-6.34-4.65a9.793 9.793 0 0 0-4.679-.72z" style="fill:#fff3db"/><path d="M7 60v3h2a2 2 0 0 1 2-2h42a2 2 0 0 1 2 2h2v-3z" style="fill:#471e17"/><path d="M8 2h48v6h2V1a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v7h2z"/><path d="M63.555 16.168 61 14.465V14a1 1 0 0 0-.35-.759C60.354 12.986 53.274 7 45 7a17.676 17.676 0 0 0-8.4 2.163A2.5 2.5 0 0 0 32 10.5v2.042A18.97 18.97 0 0 0 19 7c-8.274 0-15.354 5.986-15.65 6.241A1 1 0 0 0 3 14v.465l-2.555 1.7A1 1 0 0 0 0 17v39a1 1 0 0 0 1 1h5v6a1 1 0 0 0 1 1h50a1 1 0 0 0 1-1v-6h5a1 1 0 0 0 1-1V17a1 1 0 0 0-.445-.832zM59 14.479v32.907A30.023 30.023 0 0 0 47 45c-6.032 0-11.429 2.672-14 4.182v-34.8a17.612 17.612 0 0 1 2-1.781V44h2V11.255A15.857 15.857 0 0 1 45 9c6.549 0 12.52 4.321 14 5.479zM34 10.5a.5.5 0 0 1 .5-.5.493.493 0 0 1 .389.2q-.473.318-.889.631zM5 14.479C6.48 13.321 12.451 9 19 9c6.494 0 10.96 4.285 12 5.386v34.8C28.429 47.672 23.032 45 17 45a30.023 30.023 0 0 0-12 2.386zm-3 3.056 1-.667V49a1 1 0 0 0 1.513.858A26.506 26.506 0 0 1 17 47c7.571 0 14.352 4.766 14.419 4.814a1 1 0 0 0 1.162 0C32.648 51.766 39.408 47 47 47a26.506 26.506 0 0 1 12.487 2.858A1 1 0 0 0 61 49V16.868l1 .667V52.6A48.8 48.8 0 0 0 48 50a19.048 19.048 0 0 0-11.715 4.409A6.15 6.15 0 0 0 32 53a6.15 6.15 0 0 0-4.285 1.409A19.048 19.048 0 0 0 16 50a48.8 48.8 0 0 0-14 2.6zm0 37.173C4 54.022 10.378 52 16 52a16.588 16.588 0 0 1 9.134 3H2zM56 59H16v2h40v1H8v-1h2v-2H8v-2h20v-.01a.98.98 0 0 0 .38-.066A1 1 0 0 0 29 56c0-.249 1.064-1 3-1s3 .751 3 1a1 1 0 0 0 1 1h20zm-17.134-4A16.588 16.588 0 0 1 48 52c5.622 0 12 2.022 14 2.708V55z"/><path d="M16.692 25h5.538A3.789 3.789 0 0 0 26 21.2a3.584 3.584 0 0 0-3.308-3.4 1.1 1.1 0 0 0-.14.01 2.359 2.359 0 0 1-1.629-.21c0-1.919-2.3-2.6-4.271-2.6C13.957 15 12 16.767 12 19.2c0 3.2 2.105 5.8 4.692 5.8zm-.04-8c1.149 0 2.271.379 2.271.6a1.993 1.993 0 0 0 .7 1.553 4.37 4.37 0 0 0 3.119.65A1.675 1.675 0 0 1 24 21.2a1.788 1.788 0 0 1-1.77 1.8h-5.538C15.233 23 14 21.26 14 19.2c0-1.337 1.041-2.2 2.652-2.2z"/><path d="M16 18h2v2h-2zM24 35a4.739 4.739 0 0 0-3.87-4.724A6.022 6.022 0 0 1 22 30v-2a7.519 7.519 0 0 0-3 .579V27h-2v1.389A9.37 9.37 0 0 0 14 28v2a8.363 8.363 0 0 1 2.165.21C13.6 30.769 12 32.515 12 35a6 6 0 0 0 12 0zm-10 0c0-2.708 2.8-3 4-3s4 .292 4 3a4 4 0 0 1-8 0zM46 19a30.177 30.177 0 0 1 9.629 1.929l.742-1.858A31.728 31.728 0 0 0 46 17c-5.177 0-7.356 1.061-7.447 1.105l.894 1.79C39.465 19.886 41.365 19 46 19z"/><path d="M46 22a30.177 30.177 0 0 1 9.629 1.929l.742-1.858A31.728 31.728 0 0 0 46 20c-5.177 0-7.356 1.061-7.447 1.105l.894 1.79C39.465 22.886 41.365 22 46 22z"/><path d="M46 25a30.177 30.177 0 0 1 9.629 1.929l.742-1.858A31.728 31.728 0 0 0 46 23c-5.177 0-7.356 1.061-7.447 1.105l.894 1.79C39.465 25.886 41.365 25 46 25zM47 40a1 1 0 0 0 1-1c0-7.119-5.887-9-9-9a1 1 0 0 0-1 1c0 7.119 5.887 9 9 9zm-6.482-6.068 3.388 3.388a6.069 6.069 0 0 1-3.388-3.388zm4.964 2.136-3.388-3.388a6.069 6.069 0 0 1 3.388 3.388z"/><path d="M48 30a1 1 0 0 0-1 1c0 7.119 5.887 9 9 9a1 1 0 0 0 1-1c0-7.119-5.887-9-9-9zm6.482 6.068-3.388-3.388a6.069 6.069 0 0 1 3.388 3.388zm-4.964-2.136 3.388 3.388a6.069 6.069 0 0 1-3.388-3.388zM12 59h2v2h-2z"/></g></svg>
+         <span class="font-semibold text-lg text-gray-800 dark:text-white">TastyBites</span>
+         </a> 
         <!-- End Logo -->
   
-        <div class="ms-1 sm:ms-2">
-          <!-- Templates Dropdown -->
-          <div class="hs-dropdown  relative  [--auto-close:inside] inline-flex">
-            <button id="hs-dropdown-preview-navbar" type="button" class="hs-dropdown-toggle  group relative flex justify-center items-center size-8 text-xs rounded-full text-gray-800 hover:bg-gray-100 focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 disabled:opacity-50 disabled:pointer-events-none focus:outline-none" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                <span class="">
-                  <svg class=" size-4 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                </span>
-  
-              <span class="absolute -top-0.5 -end-0.5">
-                <span class="relative flex">
-                  <span class="animate-ping absolute inline-flex size-full rounded-full bg-red-400 dark:bg-red-600 opacity-75"></span>
-                  <span class="relative inline-flex size-2 bg-red-500 rounded-full"></span>
-                  <span class="sr-only">Notification</span>
-                </span>
-              </span>
-            </button>
-  
-            <!-- Dropdown -->
-            <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 w-full md:w-[450px] transition-[opacity,margin] duration opacity-0 hidden z-30 overflow-hidden border border-gray-200 bg-white rounded-xl shadow-[0_10px_40px_10px_rgba(0,0,0,0.08)] dark:bg-neutral-800 dark:border-neutral-700" role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-preview-navbar">
-                <!-- Tab -->
-                <div class="p-3 pb-0 flex flex-wrap justify-between items-center gap-3 border-b border-gray-200 dark:border-neutral-700">
-                  <!-- Nav Tab -->
-                  <nav class="flex  gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-                    <button type="button" class="hs-tab-active:after:bg-gray-800 hs-tab-active:text-gray-800 px-2 py-1.5 mb-2 relative inline-flex justify-center items-center gap-x-2 text-nowrap  hover:bg-gray-100 text-gray-500 hover:text-gray-800 text-sm rounded-lg disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 after:absolute after:-bottom-2 after:inset-x-2 after:z-10 after:h-0.5 after:pointer-events-none dark:hs-tab-active:text-neutral-200 dark:hs-tab-active:after:bg-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-300 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  " id="hs-pmn-item-pro" aria-selected="false" data-hs-tab="#hs-pmn-pro" aria-controls="hs-pmn-pro" role="tab" >
-                      Pro
-                    </button>
-                    <button type="button" class="hs-tab-active:after:bg-gray-800 hs-tab-active:text-gray-800 px-2 py-1.5 mb-2 relative inline-flex justify-center items-center gap-x-2 text-nowrap  hover:bg-gray-100 text-gray-500 hover:text-gray-800 text-sm rounded-lg disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 after:absolute after:-bottom-2 after:inset-x-2 after:z-10 after:h-0.5 after:pointer-events-none dark:hs-tab-active:text-neutral-200 dark:hs-tab-active:after:bg-neutral-400 dark:text-neutral-500 dark:hover:text-neutral-300 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 active " id="hs-pmn-item-free" aria-selected="true" data-hs-tab="#hs-pmn-free" aria-controls="hs-pmn-free" role="tab" >
-                      Free
-                    </button>
-                  </nav>
-                  <!-- End Nav Tab -->
-              </div>
-              <!-- End Tab -->
-  
-              <!-- Tab Content -->
-              <div id="hs-pmn-pro" class="hidden" role="tabpanel" aria-labelledby="hs-pmn-item-pro">
-                  <!-- Header -->
-                    <div class="p-3 flex flex-wrap justify-between items-center gap-3">
-                      <span class="block font-semibold text-sm text-gray-800 dark:text-neutral-200">Templates (12)</span>
-  
-                    <div class="ms-auto">
-                        <a class="group py-2 px-2.5 rounded-md flex items-center gap-x-1 text-[13px] bg-gray-800 text-white hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-900 dark:bg-white dark:hover:bg-neutral-200 dark:focus:bg-neutral-200 dark:text-neutral-800" href="../pro/pricing.html">
-                                  Purchase
-                                  <svg class="hidden md:inline-block shrink-0 size-3.5 group-hover:translate-x-0.5 transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:group-focus:opacity-100 lg:group-focus:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:group-focus:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End Header -->
-  
-                  <!-- Body -->
-                  <div class="p-3 max-h-[25rem] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
-                      <!-- Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/dashboard/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img1.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img1.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Dashboard
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/shop/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img21.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img21.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Shop
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/chat/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img16.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img16.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Chat
-                        </p>
-  
-                        <div class="absolute -top-px end-[3px]'>
-                          <span class="py-0.5 px-2 inline-flex items-center gap-x-1.5 text-xs font-medium bg-emerald-100 text-emerald-800 rounded-full dark:bg-emerald-900 dark:text-emerald-500">+4</span>
-                        </div>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/inbox/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img26.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img26.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Inbox
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/payment/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img8.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img8.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Payment
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/ecommerce/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img4.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img4.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          E-Commerce
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/calendars/day.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img14.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img14.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Calendars
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/workspace/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img18.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img18.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Workspace
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/analytics/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img9.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img9.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Analytics
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/project/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img10.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img10.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Project
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/saas/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img11.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img11.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          SaaS
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../pro/files/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/demo-previews/img12.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/demo-previews-dark/img12.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Files
-                        </p>
-                      </a>
-                      <!-- End Link -->
-                      </div>
-                      <!-- End Grid -->
-                    </div>
-                    <!-- Body -->
-  
-                    <!-- Footer -->
-                  <div class="p-3 flex flex-wrap justify-center items-center gap-0.5">
-                      <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../pro/index.html">
-                        Main page
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                    <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../pro/examples.html">
-                        Examples (600+<!-- (601) -->)
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                    <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../pro/templates.html">
-                        Templates (12)
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End Footer -->
-                </div>
-                <!-- End Tab Content -->
-  
-                <!-- Tab Content -->
-              <div id="hs-pmn-free" class="" role="tabpanel" aria-labelledby="hs-pmn-item-free">
-                  <!-- Header -->
-                    <div class="p-3 flex flex-wrap justify-between items-center gap-3">
-                      <span class="block font-semibold text-sm text-gray-800 dark:text-neutral-200">Templates (5)</span>
-  
-                    <div class="ms-auto">
-                        <a class="group py-2 px-2.5 rounded-md flex items-center gap-x-1 text-[13px] bg-gray-800 text-white hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-900 dark:bg-white dark:hover:bg-neutral-200 dark:focus:bg-neutral-200 dark:text-neutral-800" href="../templates.html">
-                                  Free download
-                                  <svg class="hidden md:inline-block shrink-0 size-3.5 group-hover:translate-x-0.5 transition" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:group-focus:opacity-100 lg:group-focus:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:group-focus:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End Header -->
-  
-                  <!-- Body -->
-                  <div class="p-3 max-h-[25rem] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
-                      <!-- Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../templates/agency/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/template-previews/img1.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/template-previews-dark/img1.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Agency
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../templates/personal/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/template-previews/img3.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/template-previews-dark/img3.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Personal
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../templates/admin/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/template-previews/img7.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/template-previews-dark/img7.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Admin
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 bg-gray-100 dark:bg-neutral-700 transition" href="../templates/creative-agency/index.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/template-previews/img2.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/template-previews-dark/img2.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          Creative Agency
-                        </p>
-                      </a>
-                      <!-- End Link -->
-  
-                      <!-- Link -->
-                      <a class="p-3 relative flex flex-col justify-center items-center gap-y-3 rounded-xl hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700  transition" href="../templates/ai-prompt/ai-with-sidebar.html">
-                        <img class="dark:hidden w-28 rounded-lg shadow" src="../assets/img/template-previews/img4.jpg" alt="Main Page">
-                        <img class="hidden dark:block w-28 rounded-lg shadow" src="../assets/img/template-previews-dark/img4.jpg" alt="Main Page">
-  
-                        <p class="text-sm text-gray-800 dark:text-neutral-400">
-                          AI Prompt
-                        </p>
-                      </a>
-                      <!-- End Link -->
-                      </div>
-                      <!-- End Grid -->
-                    </div>
-                    <!-- Body -->
-  
-                    <!-- Footer -->
-                  <div class="p-3 flex flex-wrap justify-center items-center gap-0.5">
-                      <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../index.html">
-                        Main page
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                    <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../examples.html">
-                        Examples (200+<!-- 202 -->)
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                    <div class="relative ps-2 ms-1 first:ps-0 first:ms-0 first:before:hidden before:hidden md:before:block before:absolute before:top-1/2 before:start-0 before:w-px before:h-4 before:bg-gray-200 before:-translate-y-1/2 dark:before:bg-neutral-700">
-                      <a class="group flex items-center gap-x-1.5 py-1.5 px-2 rounded-md text-[13px] text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="../templates.html">
-                        Templates (5)
-                        <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0 lg:transition" d="M5 12h14"/><path class="lg:-translate-x-1.5 lg:group-hover:translate-x-0 lg:transition" d="m12 5 7 7-7 7"/></svg>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- End Footer -->
-              </div>
-                <!-- End Tab Content -->
-            </div>
-            <!-- End Dropdown -->
-          </div>
-          <!-- End Templates Dropdown -->
-        </div>
       </div>
   
       <!-- Button Group -->
       <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
      @auth
    
-      {{-- <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium text-nowrap rounded-xl border border-transparent bg-lime-400 text-black hover:bg-lime-500 focus:outline-none focus:bg-lime-500 transition disabled:opacity-50 disabled:pointer-events-none">
-        log Out
-      </button> --}}
       <form method="POST" action="{{ route('logout') }}">
         @csrf
 
@@ -558,25 +73,15 @@
           <div>
             <a class="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 dark:text-white" href="/" aria-current="page">Home</a>
           </div>
+       
           <div>
-
-                @auth
-                <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="/recipes">My Recipes</a>
-                    
-                @else
-                <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="/login">My Recipes</a>
-                 
-                @endauth
-         
-              </div>
-          <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">About</a>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#about">About</a>
           </div>
           <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Categories</a>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#category">Categories</a>
           </div>
           <div>
-            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Blog</a>
+            <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#recipes">Recipes</a>
           </div>
         </div>
       </div>
@@ -585,118 +90,252 @@
   </header>
   <!-- ========== END HEADER ========== -->
         <!-- Hero -->
-<div class="relative overflow-hidden">
-    <!-- Gradients -->
-    <div aria-hidden="true" class="flex absolute -top-96 start-1/2 transform -translate-x-1/2">
-      <div class="bg-gradient-to-r from-violet-300/50 to-purple-100 blur-3xl w-[25rem] h-[44rem] rotate-[-60deg] transform -translate-x-[10rem] dark:from-violet-900/50 dark:to-purple-900"></div>
-      <div class="bg-gradient-to-tl from-blue-50 via-blue-100 to-blue-50 blur-3xl w-[90rem] h-[50rem] rounded-fulls origin-top-left -rotate-12 -translate-x-[15rem] dark:from-indigo-900/70 dark:via-indigo-900/70 dark:to-blue-900/70"></div>
-    </div>
-    <!-- End Gradients -->
-  
-    <div class="relative z-10">
-      <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
-        <div class="max-w-2xl text-center mx-auto">
-          <p class="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
-           Experience new recipes from the latest recipe application
-          </p>
-  
-          <!-- Title -->
-          <div class="mt-5 max-w-2xl">
-            <h1 class="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
-              Recipe Sharing Application
-            </h1>
-          </div>
-          <!-- End Title -->
-  
-          <div class="mt-5 max-w-3xl">
-            <p class="text-lg text-gray-600 dark:text-neutral-400">Preline UI is an open-source set of prebuilt UI components, ready-to-use examples and Figma design system based on the utility-first Tailwind CSS framework.</p>
-          </div>
-  
-          <!-- Buttons -->
-          <div class="mt-8 gap-3 flex justify-center">
-          @auth
-          <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="/">
-            Explore More
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </a>
-          @else
-          <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="/login">
-            Get started
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </a>
-          @endauth
-            <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="/login">
-              <svg class="shrink-0 size-4" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.875 18C8.531 18 9.875 16.656 9.875 15V12H6.875C5.219 12 3.875 13.344 3.875 15C3.875 16.656 5.219 18 6.875 18Z" fill="#0ACF83"></path>
-                <path d="M3.875 9C3.875 7.344 5.219 6 6.875 6H9.875V12H6.875C5.219 12 3.875 10.656 3.875 9Z" fill="#A259FF"></path>
-                <path d="M3.875 3C3.875 1.344 5.219 0 6.875 0H9.875V6H6.875C5.219 6 3.875 4.656 3.875 3Z" fill="#F24E1E"></path>
-                <path d="M9.87501 0H12.875C14.531 0 15.875 1.344 15.875 3C15.875 4.656 14.531 6 12.875 6H9.87501V0Z" fill="#FF7262"></path>
-                <path d="M15.875 9C15.875 10.656 14.531 12 12.875 12C11.219 12 9.87501 10.656 9.87501 9C9.87501 7.344 11.219 6 12.875 6C14.531 6 15.875 7.344 15.875 9Z" fill="#1ABCFE"></path>
-              </svg>
-              Preline Figma
-            </a>
-          </div>
-          <!-- End Buttons -->
+        
+        
+        <!-- About Skeleton Loader (Initially visible) -->
+        <div id="about-skeleton">
+          <x-about-skeleton />
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Hero -->
-  <!-- Card Blog -->
 
-  <!-- resources/views/recipes/index.blade.php -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gray-200 dark:bg-gray-800">
-    <!-- Title -->
-    <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">All Recipes</h2>
-        <p class="mt-1 text-gray-600 dark:text-neutral-400">See how game-changing companies are making the most of every engagement with Preline.</p>
-    </div>
-    <!-- End Title -->
-
-    <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        @foreach ($recipes as $recipe)
-            <!-- Card -->
-            <div class="group flex flex-col h-full bg-gray-100 border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
-                <div class="aspect-w-16 aspect-h-11">
-                    <img class="w-full h-52 object-cover rounded-xl" src="{{ asset('storage/' . $recipe->image) }}" alt="Recipe Image">
-                </div>
-                <div class="my-4">
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                        {{ $recipe->title }}
-                    </h3>
-                    <p class="mt-5 text-gray-600 dark:text-neutral-400">
-                        {{ str($recipe->description)->words(10) }}
-                        
-                    </p>
-                   <!-- Read more -->
-    <div class="mt-5 text-center">
-        <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="/recipe/card/{{ $recipe->id }}">
-            Read more
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </a>
-    </div>
-                </div>
-                {{-- <div class="mt-auto flex items-center gap-x-3">
-                    <img class="size-8 rounded-full" src="https://example.com/path/to/avatar.jpg" alt="Author Avatar">
-                    <div>
-                        <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                            By {{ $recipe->author }}
-                        </h5>
-                    </div>
-                </div> --}}
-                
+        <!-- Actual About Section (Initially hidden) -->
+        <section id="about" class="hidden">
+          <div class="relative overflow-hidden" style="background-image: url('{{ asset('images/background.jpg') }}'); background-size: cover; background-position: center;">
+            <!-- Overlay for better readability -->
+            <div class="absolute inset-0 bg-white/70 dark:bg-black/60"></div>
+            <!-- Gradients -->
+            <div aria-hidden="true" class="flex absolute -top-96 start-1/2 transform -translate-x-1/2 z-10">
+              <div class="from-violet-300/50 to-purple-100 blur-3xl w-[25rem] h-[44rem] rotate-[-60deg] transform -translate-x-[10rem] dark:from-violet-900/50 dark:to-purple-900"></div>
+              <div class="from-blue-50 via-blue-100 to-blue-50 blur-3xl w-[90rem] h-[50rem] rounded-fulls origin-top-left -rotate-12 -translate-x-[15rem] dark:from-indigo-900/70 dark:via-indigo-900/70 dark:to-blue-900/70"></div>
             </div>
-            <!-- End Card -->
-        @endforeach
-    </div>
-    <!-- End Grid -->
+            <!-- End Gradients -->
 
-   
-    <!-- End Card -->
-</div>
-<!-- End Card Blog -->
+            <div class="relative z-20">
+              <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-5 lg:py-10">
+                <div class="max-w-2xl text-center mx-auto">
+                  <p class="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400">
+                    Experience new recipes from the latest our TastyBitesn
+                  </p>
+                  <!-- Title -->
+                  <div class="mt-5 max-w-2xl">
+                    <h1 class="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
+                      Let's Start Cooking With Popular Recipes
+                    </h1>
+                  </div>
+                  <!-- End Title -->
+                  <div class="mt-5 max-w-3xl">
+                    <p class="text-lg text-gray-600 dark:text-neutral-400">
+                      Want to learn but confused of how to start? No need to woryy again
+                    </p>
+                  </div>
+                  <!-- Buttons -->
+                  <div class="mt-4 gap-3 flex justify-center">
+                    @auth
+                    <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#recipes">
+                      Explore More
+                      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </a>
+                    @else
+                    <a class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="/login">
+                      Get started
+                      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </a>
+                    @endauth
+                  </div>
+                  <!-- End Buttons -->
+                </div>
+              </div>
+            </div>
 
-  <!-- End Card Blog -->
+            <section id="category" class="relative z-20">
+              <div class="py-3 sm:py-3 lg:py-5 dark:bg-neutral-900">
+                <div class="text-center mb-8">
+                  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
+                    Explore Recipe Categories
+                  </h2>
+                  <p class="mt-2 text-base sm:text-lg text-gray-600 dark:text-neutral-400">
+                    Find your favorite dishes by browsing our diverse categories.
+                  </p>
+                </div>
+                <div class="relative px-4 sm:px-8 md:px-16 lg:px-24">
+                  <!-- Left Arrow -->
+                  <button onclick="scrollCategories('left')" class="absolute left-4 sm:left-8 md:left-16 lg:left-24 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-900 p-4 text-2xl rounded-full shadow hover:bg-gray-100 dark:hover:bg-neutral-800">
+                    &lt;
+                  </button>
+                  <!-- Scrollable Category Container -->
+                  <div id="categoryScroller" class="overflow-x-auto scrollbar-hide">
+                    <div class="flex gap-4 transition-transform duration-300 ease-in-out w-max min-w-full justify-center">
+                      @forelse ($categories as $category)
+                      <div class="flex-shrink-0 w-40 bg-white rounded-lg shadow-md border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700 text-center transform transition duration-300 hover:scale-95">
+                        <img class="w-full h-24 object-cover rounded-t-lg" src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}">
+                        <div class="p-1">
+                          <h3 class="text-base font-semibold text-gray-800 dark:text-white mb-2">{{ $category->name }}</h3>
+                          <a href="/category/items/{{ $category->id }}" class="inline-block px-3 py-1.5 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                            View Recipes
+                          </a>
+                        </div>
+                      </div>
+                      @empty
+                      <div class="text-gray-500 dark:text-gray-400 py-8 w-full text-center">No categories available.</div>
+                      @endforelse
+                    </div>
+                  </div>
+                  <!-- Right Arrow -->
+                  <button onclick="scrollCategories('right')" class="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-neutral-900 p-4 text-2xl rounded-full shadow hover:bg-gray-100 dark:hover:bg-neutral-800">
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </section>
+            <style>
+              /* Hide scrollbar for Chrome, Safari and Opera */
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+              /* Hide scrollbar for IE, Edge and Firefox */
+              .scrollbar-hide {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;     /* Firefox */
+              }
+            </style>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            // Simulate loading time for About section (e.g. 1s)
+            setTimeout(() => {
+              document.getElementById('about-skeleton').style.display = 'none';
+              document.querySelector('section#about').classList.remove('hidden');
+            }, 1000);
+          });
+        </script>
+                <!-- End Hero -->
+
+                <!-- Card Blog -->
+                 
+
+                  <section id="recipes">
+                    <div class="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-8 mx-auto bg-gray-200 dark:bg-gray-800">
+                      
+                      <!-- Title -->
+                      <div class="max-w-2xl mx-auto text-center mb-5 lg:mb-8">
+                        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Discover Delicious Recipes</h2>
+                        <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                          Explore a world of flavors and find your next favorite dish.
+                        </p>
+                      </div>
+                      <!-- End Title -->
+
+                      <!-- Skeleton Loader (Initially visible) -->
+                      <div id="skeleton-loader">
+                        <x-skeleton-recipe :count="6" />
+                      </div>
+
+                      <!-- Actual Recipes (Initially hidden) -->
+                      <div id="recipe-cards" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        @foreach ($recipes as $recipe)
+                          <div class="group flex flex-col h-full bg-gray-100 border border-gray-200 hover:shadow-lg rounded-xl p-5 dark:border-neutral-700 dark:hover:shadow-black/40 transition">
+                            <div class="aspect-w-16 aspect-h-11">
+                              <img class="w-full h-52 object-cover rounded-xl" src="{{ asset('storage/' . $recipe->image) }}" alt="Recipe Image">
+                            </div>
+                            <div class="my-4">
+                              <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300">{{ $recipe->title }}</h3>
+                              <p class="mt-5 text-gray-600 dark:text-neutral-400">{{ str($recipe->description)->words(10) }}</p>
+                              <div class="mt-2 mb-0 text-center">
+                                <a href="/recipe/card/{{ $recipe->id }}" class="py-2 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800">
+                                  Read more
+                                  <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="m9 18 6-6-6-6"/></svg>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        @endforeach
+                      </div>
+                      <!-- End Actual Recipes -->
+
+                    </div>
+                 </section>
+
+                  <!-- End Card Blog -->
+
+
+              <!-- ========== FOOTER ========== -->
+                <footer class="bg-green-200 mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+                  <!-- Grid -->
+                  <div class="text-center">
+                  <div>
+                    <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">TastyBites</a>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="mt-3">
+                    <p class="text-gray-500 dark:text-neutral-500">Discover, Cook, and Share with <a class="text-blue-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-blue-500" href="#">TastyBites</a> – your home for delicious inspiration.</p>
+                    <p class="text-gray-500 dark:text-neutral-500">
+                    © 2025 TastyBites. Crafted with passion for food lovers.
+                    </p>
+                  </div>
+
+                  <!-- Social Brands -->
+                  <div class="mt-3 space-x-2">
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                    </svg>
+                    </a>
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                    </a>
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    </a>
+                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
+                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"/>
+                    </svg>
+                    </a>
+                  </div>
+                  <!-- End Social Brands -->
+                  </div>
+                  <!-- End Grid -->
+                </footer>
+                <!-- ========== END FOOTER ========== -->
+                <script>
+  function scrollCategories(direction) {
+    const container = document.getElementById('categoryScroller');
+    const scrollAmount = 200;
+
+    if (direction === 'left') {
+      container.scrollLeft -= scrollAmount;
+    } else {
+      container.scrollLeft += scrollAmount;
+    }
+  }
+</script>
+
+<script>
+  window.addEventListener('load', function () {
+    document.getElementById('skeleton-loader').style.display = 'none';
+    document.getElementById('real-content').classList.remove('hidden');
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Simulate loading time (e.g. 1.2 seconds)
+    setTimeout(() => {
+      document.getElementById('skeleton-loader').style.display = 'none';
+      document.getElementById('recipe-cards').classList.remove('hidden');
+    }, 1200);
+  });
+</script>
+
+
+         <x-toaster-hub />
+
     </body>
 </html>

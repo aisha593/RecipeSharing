@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
      // Fetch the recipes, ordered by the most recent first
      $recipes = Recipe::latest()->get();
-    return view('welcome', compact('recipes'));
+     $categories = \App\Models\Category::all();
+    return view('welcome', compact('recipes', 'categories'));
 })->name('home');
 
 Route::get('/dashboard', function () {
@@ -58,6 +59,7 @@ Route::post('/edit/category/{id}', [CategoryController::class, 'update'])->name(
 Route::get('/delete-category/{id}',[CategoryController::class, 'delete']);
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/items/{id}', [CategoryController::class, 'showCategory'])->name('category.item');
 //user profile
 Route::post('/user/profile',[ProfileController::class, 'save'])->name('user.profile');
 

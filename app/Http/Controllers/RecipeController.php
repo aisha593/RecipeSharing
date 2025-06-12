@@ -67,14 +67,11 @@ public function index(Request $request)
             'category_id' => 'required',
             'ingredients' => 'required',
              'description' => 'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
            
          // Store the image in the 'public' disk and get its path
     $imagePath = $request->file('image')->store('recipes', 'public');
-
-        // Generate the URL for the image that means the imageurl in db will be /storage/recipes/filename.jpg 
-        // $imageUrl = Storage::url($imagePath);
 
         $recipes = new Recipe();
         $recipes->title = $request->title;
@@ -106,7 +103,7 @@ public function update(Request $request, $id){
         'category_id' => 'required',
         'ingredients' => 'required',
         'description' => 'required',
-        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240',
     ]);
 
     if ($request->hasFile('image')) {

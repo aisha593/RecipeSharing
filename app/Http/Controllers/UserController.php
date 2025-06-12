@@ -13,7 +13,6 @@ class UserController extends Controller
         return view('manageUser.add_user');
     }
     public function showUser(Request $request){
-        // $users = User::all();
          $perPage = $request->input('perPage', 5);  
 
     // Start the query for retrieving categories.

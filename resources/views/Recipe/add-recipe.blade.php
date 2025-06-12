@@ -63,7 +63,7 @@
             </div>
           </div>
 
-         <div class="mb-4 sm:mb-8">
+         {{-- <div class="mb-4 sm:mb-8">
           <label for="image" class="block mb-2 text-sm font-medium dark:text-white">Upload Image</label>
       
           <!-- Image Preview -->
@@ -83,7 +83,21 @@
           @error('image')
               <span class="text-red-500">{{ $message }}</span>
           @enderror
-      </div>
+      </div> --}}
+       <div class="mb-4 sm:mb-8">
+            <label for="image" class="block mb-2 text-sm font-medium dark:text-white">Image</label>
+            <input type="file" name="image" id="image" accept="image/*" class="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-lg file:border-0
+              file:text-sm file:font-semibold
+              file:bg-blue-50 file:text-blue-700
+              hover:file:bg-blue-100
+              dark:file:bg-neutral-800 dark:file:text-neutral-400 dark:hover:file:bg-neutral-700
+              ">
+            @error('image')
+            <span class="text-red-500">{{ $message }}</span>
+            @enderror
+            </div>
   
           <div class="mt-6 grid">
             <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Submit</button>

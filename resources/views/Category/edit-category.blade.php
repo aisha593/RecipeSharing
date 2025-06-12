@@ -12,7 +12,7 @@
   
       <!-- Card -->
       <div class="mt-3 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
-        <form action="{{ route('category.update',$category->id) }}" method="POST" >
+        <form action="{{ route('category.update',$category->id) }}" method="POST" enctype="multipart/form-data" >
           @csrf
 
           <input type="hidden" name="_method" value="POST">
@@ -33,6 +33,28 @@
               @enderror
             </div>
           </div>
+
+          <div class="mb-4 sm:mb-8">
+            <label for="image" class="block mb-2 text-sm font-medium dark:text-white">Image</label>
+            @if($category->image)
+              <div class="mb-2">
+                <img src="{{ asset('storage/' . $category->image) }}" alt="Current Image" class="h-24 w-24 object-cover rounded">
+                <p class="text-xs text-gray-500 dark:text-neutral-400">Current image</p>
+              </div>
+            @endif
+            <input type="file" name="image" id="image" accept="image/*" class="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-lg file:border-0
+              file:text-sm file:font-semibold
+              file:bg-blue-50 file:text-blue-700
+              hover:file:bg-blue-100
+              dark:file:bg-neutral-800 dark:file:text-neutral-400 dark:hover:file:bg-neutral-700
+              ">
+            @error('image')
+            <span class="text-red-500">{{ $message }}</span>
+            @enderror
+          </div>
+        
   
           <div class="mt-6 grid">
             <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Update</button>

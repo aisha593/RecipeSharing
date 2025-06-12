@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Masmerise\Toaster\Toaster;
 
@@ -42,11 +43,18 @@ class CategoryController extends Controller
         $validated = $request->validate([
         'name' => 'required|max:255',
         'description' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10240', 
         ]);
+       $imagePath = $request->file('image')->store('categories', 'public');
+
+
         
         $category = new Category();
         $category->name = $request->name;
         $category->description = $request->description;
+        $category->image = $imagePath;
+
+
         $category->save();
 
         Toaster::success('Category created!');
@@ -58,17 +66,31 @@ class CategoryController extends Controller
         $category = Category::find($id);
         return view('category.edit-category',compact('category'));
     }
-    public function update(Request $request,$id){
-        $category = Category::find($id);
+    public function update(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+
         $validated = $request->validate([
             'name' => 'required|max:255',
             'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
-        $category->update($validated);
+
+        // Update fields
+        $category->name = $validated['name'];
+        $category->description = $validated['description'];
+
+        // Handle image upload if a new image is provided
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('categories', 'public');
+            $category->image = $imagePath;
+        }
+
+        $category->save();
+
         Toaster::success('Category updated!');
 
         return redirect()->route('category.index');
-        
     }
     public function delete($id){
         $category = Category::find($id);
@@ -77,4 +99,26 @@ class CategoryController extends Controller
 
         return redirect()->route('category.index');
     }
+    public function showCategory(Request $request, $id)
+    {
+        $category = Category::find($id);
+
+        $query = Recipe::where('category_id', $id);
+
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('title', 'LIKE', '%' . $search . '%');
+        }
+
+        $recipes = $query->get(); // now get the filtered results
+
+        if ($recipes->isEmpty()) {
+            Toaster::info('No recipes found in this category.');
+            return redirect()->route('home');
+        }
+
+        Toaster::success('Category items loaded successfully!');
+        return view('category.category-items', compact('recipes', 'category'));
+    }
+
 }
