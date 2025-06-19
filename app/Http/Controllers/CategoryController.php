@@ -117,7 +117,6 @@ class CategoryController extends Controller
             return redirect()->route('home');
         }
 
-        Toaster::success('Category items loaded successfully!');
         return view('category.category-items', compact('recipes', 'category'));
     }
 

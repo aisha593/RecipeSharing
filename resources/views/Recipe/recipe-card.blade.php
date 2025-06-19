@@ -86,10 +86,10 @@
 
               <ul class="text-xs text-gray-500 dark:text-neutral-500">
                 <li class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
-                  Jan 18
+              Created at:
                 </li>
                 <li class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
-                  8 min read
+                 {{ $recipe->created_at->format('F j, Y') }}
                 </li>
               </ul>
             </div>
@@ -178,6 +178,14 @@
             <button type="submit" class="hs-tooltip-toggle flex items-center gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
                 @php
                     $userHasLiked = $recipe->like()->where('user_id', Auth::user()->id)->exists();
+
+                    
+    // $userHasLiked = false;
+    // if (Auth::check()) {
+    //     $userHasLiked = $recipe->like()->where('user_id', Auth::user()->id)->exists();
+    // }
+
+
                 @endphp
     
                 <!-- Change SVG icon based on like state -->

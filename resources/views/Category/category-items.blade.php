@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Category</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -77,13 +77,13 @@
                     </div>
                 
                     <div>
-                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">About</a>
+                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ url('/#about') }}">About</a>
                     </div>
                     <div>
-                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Categories</a>
+                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ url('/#category') }}">Categories</a>
                     </div>
                     <div>
-                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="#">Blog</a>
+                        <a class="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600 dark:text-white dark:hover:text-neutral-300 dark:focus:text-neutral-300" href="{{ ('/#recipes') }}">All Recipes</a>
                     </div>
                     </div>
                 </div>
@@ -91,149 +91,165 @@
                 </nav>
             </header>
   <!-- ========== END HEADER ========== -->
+
+
+    <div id="skeleton-wrapper">
+                        <x-skeleton-recipe :count="6" />
+                   </div>
       
+            <div id="recipe-category">
+                
+                            <!-- Hero -->
+                            <div class="relative overflow-hidden">
+                            <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-2 py-3 sm:py-2">
+                                <div class="text-center">
 
-                <!-- Hero -->
-                <div class="relative overflow-hidden">
-                <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-2 py-3 sm:py-2">
-                    <div class="text-center">
+                                <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
+                                    <!-- Form -->
+                                    <form action="{{ route('category.item',['id' => $category->id]) }}" method="GET">
+                                    <div class="relative z-10 flex gap-x-3 p-3 bg-white border border-gray-200 rounded-lg shadow-lg shadow-gray-100 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-gray-900/20">
+                                        <div class="w-full">
+                                        <label for="hs-search-article-1" class="block text-sm text-gray-700 font-medium dark:text-white"><span class="sr-only">Search article</span></label>
+                                        <input type="text" name="search" id="hs-search-article-1" class="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search recipe by name">
+                                        </div>
+                                        <div>
+                                    <button type="submit" class="size-11 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                            <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="11" cy="11" r="8"/>
+                                                <path d="m21 21-4.3-4.3"/>
+                                            </svg>
+                                    </button>
 
-                    <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
-                        <!-- Form -->
-                        <form action="{{ route('category.item',['id' => $category->id]) }}" method="GET">
-                        <div class="relative z-10 flex gap-x-3 p-3 bg-white border border-gray-200 rounded-lg shadow-lg shadow-gray-100 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-gray-900/20">
-                            <div class="w-full">
-                            <label for="hs-search-article-1" class="block text-sm text-gray-700 font-medium dark:text-white"><span class="sr-only">Search article</span></label>
-                            <input type="text" name="search" id="hs-search-article-1" class="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search recipe by name">
-                            </div>
-                            <div>
-                           <button type="submit" class="size-11 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                                <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"/>
-                                    <path d="m21 21-4.3-4.3"/>
-                                </svg>
-                          </button>
-
-                            </div>
-                        </div>
-                        </form>
-                        <!-- End Form -->
-
-                        <!-- SVG Element -->
-                        <div class="hidden md:block absolute top-0 end-0 -translate-y-12 translate-x-20">
-                        <svg class="w-16 h-auto text-orange-500" width="121" height="135" viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-                            <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-                            <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-                        </svg>
-                        </div>
-                        <!-- End SVG Element -->
-
-                        <!-- SVG Element -->
-                        <div class="hidden md:block absolute bottom-0 start-0 translate-y-10 -translate-x-32">
-                        <svg class="w-40 h-auto text-cyan-500" width="347" height="188" viewBox="0 0 347 188" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 82.4591C54.7956 92.8751 30.9771 162.782 68.2065 181.385C112.642 203.59 127.943 78.57 122.161 25.5053C120.504 2.2376 93.4028 -8.11128 89.7468 25.5053C85.8633 61.2125 130.186 199.678 180.982 146.248L214.898 107.02C224.322 95.4118 242.9 79.2851 258.6 107.02C274.299 134.754 299.315 125.589 309.861 117.539L343 93.4426" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-                        </svg>
-                        </div>
-                        <!-- End SVG Element -->
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <!-- End Hero -->
-
-
-             <!-- Card Blog -->
-                <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-5 mx-auto bg-gray-200 dark:bg-gray-800">
-                  <!-- Title -->
-                   
-                  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                      <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Category: {{$category->name  }}</h2>
-                      <p class="mt-1 text-gray-600 dark:text-neutral-400"> {{ $category->description }}</p>
-                  </div>
-                  <!-- End Title -->
-
-                  <!-- Grid -->
-                  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                      @foreach ($recipes as $recipe)
-                          <!-- Card -->
-                          <div class="group flex flex-col h-full bg-gray-100 border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
-                              <div class="aspect-w-16 aspect-h-11">
-                                  <img class="w-full h-52 object-cover rounded-xl" src="{{ asset('storage/' . $recipe->image) }}" alt="Recipe Image">
-                              </div>
-                              <div class="my-4">
-                                  <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
-                                      {{ $recipe->title }}
-                                  </h3>
-                                  <p class="mt-5 text-gray-600 dark:text-neutral-400">
-                                      {{ str($recipe->description)->words(10) }}
-                                      
-                                  </p>
-                                                    <!-- Read more -->
-                                    <div class="mt-5 text-center">
-                                        <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="/recipe/card/{{ $recipe->id }}">
-                                            Read more
-                                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                                        </a>
+                                        </div>
                                     </div>
-                              </div>
+                                    </form>
+                                    <!-- End Form -->
+
+                                    <!-- SVG Element -->
+                                    <div class="hidden md:block absolute top-0 end-0 -translate-y-12 translate-x-20">
+                                    <svg class="w-16 h-auto text-orange-500" width="121" height="135" viewBox="0 0 121 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+                                        <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+                                        <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+                                    </svg>
+                                    </div>
+                                    <!-- End SVG Element -->
+
+                                    <!-- SVG Element -->
+                                    <div class="hidden md:block absolute bottom-0 start-0 translate-y-10 -translate-x-32">
+                                    <svg class="w-40 h-auto text-cyan-500" width="347" height="188" viewBox="0 0 347 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 82.4591C54.7956 92.8751 30.9771 162.782 68.2065 181.385C112.642 203.59 127.943 78.57 122.161 25.5053C120.504 2.2376 93.4028 -8.11128 89.7468 25.5053C85.8633 61.2125 130.186 199.678 180.982 146.248L214.898 107.02C224.322 95.4118 242.9 79.2851 258.6 107.02C274.299 134.754 299.315 125.589 309.861 117.539L343 93.4426" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+                                    </svg>
+                                    </div>
+                                    <!-- End SVG Element -->
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- End Hero -->
+
+
+                        <!-- Card Blog -->
+                            <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-5 mx-auto bg-gray-200 dark:bg-gray-800">
+                            <!-- Title -->
                             
-                              
-                          </div>
-                          <!-- End Card -->
-                      @endforeach
-                  </div>
-                  <!-- End Grid -->
+                            <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                                <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Category: {{$category->name  }}</h2>
+                                <p class="mt-1 text-gray-600 dark:text-neutral-400"> {{ $category->description }}</p>
+                            </div>
+                            <!-- End Title -->
 
-                  <!-- End Card -->
-              </div>
-              <!-- End Card Blog -->
+                            <!-- Grid -->
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                @foreach ($recipes as $recipe)
+                                    <!-- Card -->
+                                    <div class="group flex flex-col h-full bg-gray-100 border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40" href="#">
+                                        <div class="aspect-w-16 aspect-h-11">
+                                            <img class="w-full h-52 object-cover rounded-xl" src="{{ asset('storage/' . $recipe->image) }}" alt="Recipe Image">
+                                        </div>
+                                        <div class="my-4">
+                                            <h3 class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white">
+                                                {{ $recipe->title }}
+                                            </h3>
+                                            <p class="mt-5 text-gray-600 dark:text-neutral-400">
+                                                {{ str($recipe->description)->words(10) }}
+                                                
+                                            </p>
+                                                                <!-- Read more -->
+                                                <div class="mt-5 text-center">
+                                                    <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-blue-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-blue-500 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="/recipe/card/{{ $recipe->id }}">
+                                                        Read more
+                                                        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                                                    </a>
+                                                </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <!-- End Card -->
+                                @endforeach
+                            </div>
+                            <!-- End Grid -->
+
+                            <!-- End Card -->
+                        </div>
+                        <!-- End Card Blog -->
 
 
-              <!-- ========== FOOTER ========== -->
-                <footer class="bg-green-200 mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-                  <!-- Grid -->
-                  <div class="text-center">
-                  <div>
-                    <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">TastyBites</a>
-                  </div>
-                  <!-- End Col -->
+                        <!-- ========== FOOTER ========== -->
+                            <footer class="bg-green-200 mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+                            <!-- Grid -->
+                            <div class="text-center">
+                            <div>
+                                <a class="flex-none text-xl font-semibold text-black dark:text-white" href="#" aria-label="Brand">TastyBites</a>
+                            </div>
+                            <!-- End Col -->
 
-                  <div class="mt-3">
-                    <p class="text-gray-500 dark:text-neutral-500">Discover, Cook, and Share with <a class="text-blue-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-blue-500" href="#">TastyBites</a> – your home for delicious inspiration.</p>
-                    <p class="text-gray-500 dark:text-neutral-500">
-                    © 2025 TastyBites. Crafted with passion for food lovers.
-                    </p>
-                  </div>
+                            <div class="mt-3">
+                                <p class="text-gray-500 dark:text-neutral-500">Discover, Cook, and Share with <a class="text-blue-600 decoration-2 hover:underline focus:outline-hidden focus:underline font-medium dark:text-blue-500" href="#">TastyBites</a> – your home for delicious inspiration.</p>
+                                <p class="text-gray-500 dark:text-neutral-500">
+                                © 2025 TastyBites. Crafted with passion for food lovers.
+                                </p>
+                            </div>
 
-                  <!-- Social Brands -->
-                  <div class="mt-3 space-x-2">
-                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
-                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
-                    </svg>
-                    </a>
-                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
-                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                    </svg>
-                    </a>
-                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
-                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                    </a>
-                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700" href="#">
-                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z"/>
-                    </svg>
-                    </a>
-                  </div>
-                  <!-- End Social Brands -->
-                  </div>
-                  <!-- End Grid -->
-                </footer>
-                <!-- ========== END FOOTER ========== -->
+                            <!-- Social Brands -->
+                            <div class="mt-3 space-x-2">
+                                    <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                    href="mailto:youremail@gmail.com"
+                                    target="_blank"
+                                    title="Email Me">
+                                    <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                                </svg>
+                                    </a>
+
+                                <a class="inline-flex justify-center items-center w-10 h-10 text-green-600 rounded-full transition-colors duration-200 hover:bg-white hover:shadow-md dark:hover:bg-white dark:hover:text-green-600"
+                                    href="https://wa.me/255685054188"
+                                    target="_blank"
+                                    title="Chat on WhatsApp">
+                                    <svg class="w-6 h-6" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="currentColor" d="M16.002 2.988c-6.975 0-12.627 5.655-12.627 12.63 0 2.224.588 4.4 1.702 6.308L2 30l8.261-3.011a12.63 12.63 0 0 0 5.742 1.396h.001c6.975 0 12.627-5.654 12.627-12.63s-5.652-12.627-12.627-12.627zm0 22.97a10.36 10.36 0 0 1-5.28-1.45l-.379-.223-4.902 1.786 1.7-5.06-.245-.387a10.34 10.34 0 0 1-1.603-5.598c0-5.717 4.651-10.369 10.368-10.369s10.368 4.652 10.368 10.37-4.651 10.37-10.368 10.37zm5.646-7.78c-.308-.154-1.828-.9-2.111-1.002-.282-.103-.488-.154-.693.154s-.793 1.002-.973 1.21c-.179.206-.358.231-.666.077-.308-.154-1.302-.48-2.48-1.532-.917-.818-1.536-1.83-1.717-2.138-.179-.308-.019-.474.135-.628.138-.137.308-.358.462-.537.154-.179.205-.308.308-.513.103-.206.051-.385-.025-.537-.077-.154-.693-1.672-.95-2.294-.25-.6-.505-.517-.693-.517-.179-.009-.385-.012-.59-.012-.206 0-.537.077-.818.385s-1.075 1.051-1.075 2.563c0 1.511 1.1 2.968 1.252 3.174.154.205 2.171 3.314 5.26 4.645.735.316 1.308.505 1.754.644.737.234 1.408.201 1.937.122.591-.088 1.828-.748 2.086-1.47.257-.72.257-1.338.18-1.47-.077-.128-.282-.205-.59-.358z"/>
+                                    </svg>
+                                </a>
+
+
+                            </div>
+                            <!-- End Social Brands -->
+                            </div>
+                            <!-- End Grid -->
+                            </footer>
+                            <!-- ========== END FOOTER ========== -->
+
+            </div>
+                 <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    // Simulate loading (e.g., fetching via AJAX or waiting for Livewire mount)
+                    setTimeout(() => {
+                      document.getElementById("skeleton-loader").classList.add("hidden");
+                      document.getElementById("recipe-category").classList.remove("hidden");
+                    }, 1500); // Adjust time to match your actual loading
+                  });
+                </script>
 
     </body>
 </html>
