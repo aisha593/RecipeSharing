@@ -1,14 +1,17 @@
 @extends('layout.custom-layout')
 @section('content')
 
+<div id="recipe-card">
+    <x-recipeCard-skeletone />
+</div>
 
-  <div class=" px-4 py-3 sm:px-6 lg:px-8 lg:py-3 ">
-    <div class="">
-      <div class="">
+<div id="card-content" class="hidden px-4 py-3 sm:px-6 lg:px-8 lg:py-3">
+   
+    
         <h2 class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
           Recipe Details
         </h2>
-      </div>
+      
   
       <!-- Card -->
       <!-- Blog Article -->
@@ -275,7 +278,7 @@
 </div>
 <!-- End Sticky Share Group -->
       <!-- End Card -->
-    </div>
+    
 
     <script>
     
@@ -288,5 +291,15 @@
         });
       }
     </script>
+
+      <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    // Simulate loading (e.g., fetching via AJAX or waiting for Livewire mount)
+                    setTimeout(() => {
+                      document.getElementById("recipe-card").classList.add("hidden");
+                      document.getElementById("card-content").classList.remove("hidden");
+                    }, 1500); // Adjust time to match your actual loading
+                  });
+                </script>
   </div>
 @endsection

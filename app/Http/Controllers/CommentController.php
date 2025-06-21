@@ -28,8 +28,6 @@ public function saveComment(Request $request,$recipeId){
     $user = User::find($posterId);
     $user->notify(new CommentNotification($comments));
 
-    Toaster::success('comment sent!');
-
     $recipe = Recipe::find($recipeId);
     return redirect()->route('recipe.RecipeCard', ['id' => $recipeId,'recipe' =>$recipe]); // Replace $recipeId with the actual recipe ID
  

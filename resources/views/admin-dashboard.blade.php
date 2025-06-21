@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Categories Card -->
-                {{-- <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 flex flex-col items-center">
                         <div class="text-2xl font-bold">{{ $categoriesCount ?? 0 }}</div>
                         <div class="mt-2 text-gray-600 flex items-center gap-2">
@@ -60,10 +60,10 @@
                             Categories
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <!-- Users Card -->
-                {{-- <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 flex flex-col items-center">
                         <div class="text-2xl font-bold">{{ $usersCount ?? 0 }}</div>
                         <div class="mt-2 text-gray-600 flex items-center gap-2">
@@ -74,7 +74,7 @@
                             Users
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>

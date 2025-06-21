@@ -7,24 +7,29 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Like;
 use App\Models\Recipe;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
-
-
-
-
 
 
 
 Route::get('/', function () {
      // Fetch the recipes, ordered by the most recent first
      $recipes = Recipe::latest()->get();
-     $categories = \App\Models\Category::all();
+     $categories = Category::all();
     return view('welcome', compact('recipes', 'categories'));
 })->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $postsCount = Recipe::where('user_id', auth()->id())->count();
+    $usersCount = User::count();
+    $categoriesCount = Category::count();
+    $likesCount = Like::where('user_id', auth()->id())->count();
+    $commentsCount = Comment::where('user_id', auth()->id())->count();
+    return view('dashboard', compact('postsCount', 'usersCount', 'categoriesCount', 'likesCount', 'commentsCount'));
 })->middleware(['auth', 'verified','super-admin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -32,6 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware(['auth','super-admin'])->group(function () {
+
 Route::post('/add/recipe', [RecipeController::class, 'store'])->name('recipe.store');
 
 Route::get('/add/recipe', [RecipeController::class, 'create'])->name('recipe.create');
@@ -41,7 +49,7 @@ Route::get('/recipes', [RecipeController::class, 'index'])->name('recipe.index')
 Route::get('/edit/recipe/{id}',[RecipeController::class, 'loadEditPage']);
 
 Route::post('/edit/recipe/{id}',[RecipeController::class, 'Update'])->name('recipe.update');
-
+});
 Route::get('/view/recipe/{id}',[RecipeController::class, 'viewRecipe'])->name('recipe.viewRecipe');
 
 Route::get('/delete-recipe/{id}', [RecipeController::class, 'deleteRecipe'])->name('delete.recipe');

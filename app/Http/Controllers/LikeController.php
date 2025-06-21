@@ -27,7 +27,7 @@ class LikeController extends Controller
         $user->notify(new LikeNotification($likes));
         }
 
-        return back()->with('success', 'Recipe liked!');
+        return back()->with('success', value: 'Recipe liked!');
         
     }
 }

@@ -13,7 +13,6 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    {{-- <body class="font-sans antialiased"> --}}
         <body class="bg bg-gray-100">
             
             <!-- ========== MAIN CONTENT ========== -->
@@ -125,7 +124,7 @@
 </div>
 
 <!-- Sidebar -->
-<div id="hs-application-sidebar" class="hs-overlay  [--auto-close:lg]
+{{-- <div id="hs-application-sidebar" class="hs-overlay  [--auto-close:lg]
   hs-overlay-open:translate-x-0
   -translate-x-full transition-all duration-300 transform
   w-[260px] h-full
@@ -160,31 +159,175 @@
               Dashboard
             </a>
           </li>
-          
+          <!-- Categories (visible to superadmin only) -->
+@if(auth()->check() && auth()->user()->role === 0 )
           <li>
             <a class="{{ request()->is('categories*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300" href="/categories">
               <svg class="shrink-0 mt-0.5 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/><path d="m21.7 16.4-.9-.3"/><path d="m15.2 13.9-.9-.3"/><path d="m16.6 18.7.3-.9"/><path d="m19.1 12.2.3-.9"/><path d="m19.6 18.7-.4-1"/><path d="m16.8 12.3-.4-1"/><path d="m14.3 16.6 1-.4"/><path d="m20.7 13.8 1-.4"/></svg>
             Manage Category
           </a>
         </li>
+        
+          <li><a class="{{ request()->is('users*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300" href="/users">
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+           Manage Users
+          </a>
+        </li>
+@else
+<!-- Recipes (visible to admin and superadmin) -->
+@if(auth()->check() && in_array(auth()->user()->role, [3, 0]))
 
           <li><a class="{{ request()->is('recipes*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300" href="/recipes">
               <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
             Manage Recipes
           </a>
         </li>
+        @endif
 
-          <li><a class="{{ request()->is('users*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300" href="/users">
-          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-
-           Manage Users
-          </a></li>
         </ul>
       </nav>
     </div>
     <!-- End Content -->
   </div>
+</div> --}}
+<div id="hs-application-sidebar"
+     class="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-[260px] h-full hidden fixed inset-y-0 start-0 z-[60] bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700"
+     role="dialog"
+     tabindex="-1"
+     aria-label="Sidebar">
+  <div class="relative flex flex-col h-full max-h-full">
+    
+    <!-- Logo Section -->
+    <div class="px-6 pt-4 flex items-center">
+      <a class="flex items-center gap-2 rounded-xl text-xl font-semibold focus:outline-none focus:opacity-80"
+         href="#"
+         aria-label="RecipesApp Logo">
+        <!-- Logo Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-10 h-10">
+          <!-- (SVG paths remain unchanged) -->
+        </svg>
+        <span class="font-semibold text-lg text-gray-800 dark:text-white">RecipesApp</span>
+      </a>
+    </div>
+    <!-- End Logo Section -->
+
+    <!-- Navigation -->
+    <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+      <nav class="hs-accordion-group p-3 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
+        <ul class="flex flex-col space-y-1">
+
+          <!-- Dashboard -->
+          <li>
+            <a href="/dashboard"
+               class="{{ request()->is(patterns: 'dashboard*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+              <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+
+          @if(auth()->check() && auth()->user()->role == 0)
+            <!-- Manage Categories (Superadmin only) -->
+            <li>
+              <a href="/categories"
+                 class="{{ request()->is('categories*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+                <svg class="shrink-0 size-4 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <circle cx="18" cy="15" r="3" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M10 15H6a4 4 0 0 0-4 4v2" />
+                  <path d="m21.7 16.4-.9-.3" />
+                  <path d="m15.2 13.9-.9-.3" />
+                  <path d="m16.6 18.7.3-.9" />
+                  <path d="m19.1 12.2.3-.9" />
+                  <path d="m19.6 18.7-.4-1" />
+                  <path d="m16.8 12.3-.4-1" />
+                  <path d="m14.3 16.6 1-.4" />
+                  <path d="m20.7 13.8 1-.4" />
+                </svg>
+                Manage Category
+              </a>
+            </li>
+
+            <!-- Manage Users -->
+            <li>
+              <a href="/users"
+                 class="{{ request()->is('users*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Manage Users
+              </a>
+            </li>
+
+              <!-- Manage Recipes -->
+            <li>
+              <a href="/recipes"
+                 class="{{ request()->is('recipes*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                Manage Recipes
+              </a>
+            </li>
+
+          @elseif(auth()->check() && auth()->user()->role == 2)
+
+            <!-- Manage Recipes -->
+            <li>
+              <a href="/recipes"
+                 class="{{ request()->is('recipes*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                Manage Recipes
+              </a>
+            </li>
+
+            @else
+            <!-- Default Recipes Section (for other roles) -->
+           
+
+            <!-- Manage Recipes -->
+            <li>
+              <a href="/dashboard"
+                 class="{{ request()->is('recipes*') ? 'bg-gray-100 text-gray-800 dark:bg-neutral-700 dark:text-white' : 'text-gray-800 dark:text-neutral-200 hover:bg-gray-100 dark:hover:bg-neutral-700' }} flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg focus:outline-none">
+               
+                 <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                Become Verified Member
+              </a>
+            </li>
+          @endif
+
+        </ul>
+      </nav>
+    </div>
+    <!-- End Navigation -->
+
+  </div>
 </div>
+
 <!-- End Sidebar -->
 
 <!-- Content -->

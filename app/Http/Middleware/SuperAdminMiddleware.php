@@ -15,14 +15,22 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role == 2) {
-            // return response()->json(['message' => 'You are not authorized to access this route'], 403);
-            return redirect()->route('dashboard');
+        if (auth()->check()) {
+            $user = auth()->user();
+
+            if ($user->role == 0) {
+                // Super Admin
+                return $next($request);
+            } elseif ($user->role == 2) {
+                // Redirect if not Super Admin (e.g., role 2 is admin)
+                return $next($request);
+            } elseif ($user->role == 1) {
+                // Redirect if not Super Admin and not admin (e.g., role 1 is normal user)
+                return redirect('/');
+            }
         }
-        elseif(auth()->user()->role == 1) {
-            // return response()->json(['message' => 'You are not authorized to access this route'], 403);
-            return redirect()->route('home');
-        }
-        return $next($request);
+
+        abort(403, message: 'Unauthorized access.');
+
     }
 }
