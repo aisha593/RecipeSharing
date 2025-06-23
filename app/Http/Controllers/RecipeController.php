@@ -33,14 +33,7 @@ public function index(Request $request)
     if ($request->filled('category_id')) {
         $query->where('category_id', $request->input('category_id'));
     }
-    //use this method if using eloquent ORM
-    // if ($request->filled('category')) {
-    //     $query->whereHas('category', function ($q) use ($request) {
-    //         $q->where('id', $request->input('category'));
-    //     });
-    // }
     
-
     // Paginate the results.
     $recipes = $query->paginate($perPage);
     $categories = Category::all();
@@ -155,5 +148,38 @@ public function loadRecipeCard($id){
     $recipe = Recipe::with('category')->find($id);
     return view('recipe.recipe-card',['recipe' => $recipe]);
 }
+public function showAllRecipes(Request $request){
+    
+    $perPage = $request->input('perPage', 5);
+
+    // Start with all recipes ordered by creation date.
+    $query = Recipe::orderBy('created_at', 'desc');
+
+    // If a search keyword is provided, filter by title or ingredients.
+    if ($request->filled('search')) {
+        $search = $request->input('search');
+        $query->where(function ($q) use ($search) {
+            $q->where('title', 'LIKE', "%{$search}%")
+              ->orWhere('ingredients', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // If a category filter is provided, apply it.
+    if ($request->filled('category_id')) {
+        $query->where('category_id', $request->input('category_id'));
+    }
+    
+    // Paginate the results.
+    $recipes = $query->paginate($perPage);
+    $categories = Category::all();
+    return view('recipe.all-recipes', [
+        'recipes' => $recipes,
+        'perPage' => $perPage,
+        'categories' => $categories,
+    ]);
+}
+
+   
 
 }
+
