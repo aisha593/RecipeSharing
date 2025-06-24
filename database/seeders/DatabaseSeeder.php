@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Category;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Recipe;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,9 +17,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Create 5 categories
+    $categories = Category::factory(5)->create();
+
+    // Create 10 users
+    User::factory(10)->create()->each(function ($user) use ($categories) {
+        // Each user gets 3 recipes
+        Recipe::factory(3)->create([
+            'user_id' => $user->id,
+            // Randomly assign a category from the list
+            'category_id' => $categories->random()->id,
         ]);
+    });
     }
 }
